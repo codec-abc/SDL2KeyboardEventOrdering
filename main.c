@@ -38,6 +38,12 @@ int main(int argc, char** argv)
                         break;
                     case SDL_KEYDOWN:
                         printf("keydown event\n");
+						printf
+						(
+							"key scancode is %d, key virtual key code is %d \n",
+							event.key.keysym.scancode,
+							event.key.keysym.sym
+						);
                         break;
                     case SDL_KEYUP:
                         printf("keyup event\n");
