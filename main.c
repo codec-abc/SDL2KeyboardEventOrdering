@@ -5,7 +5,7 @@ int main(int argc, char** argv)
 {
     if (SDL_Init(SDL_INIT_VIDEO) != 0 )
     {
-        fprintf(stdout,"Échec de l'initialisation de la SDL (%s)\n",SDL_GetError());
+        fprintf(stdout,"Failure during init(%s)\n",SDL_GetError());
         return -1;
     }
 
@@ -47,7 +47,6 @@ int main(int argc, char** argv)
                             event.key.keysym.scancode,
                             event.key.keysym.sym
                         );
-                        //(event.key.keysym.sym)
                         break;
                     case SDL_TEXTINPUT:
                         printf("text input event\n");
@@ -59,7 +58,7 @@ int main(int argc, char** argv)
     }
     else
     {
-        fprintf(stderr,"Erreur de création de la fenêtre: %s\n",SDL_GetError());
+        fprintf(stderr,"Failure while creating the window: %s\n",SDL_GetError());
     }
     SDL_Quit();
     return 0;
